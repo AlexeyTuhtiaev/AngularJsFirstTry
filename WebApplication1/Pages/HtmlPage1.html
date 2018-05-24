@@ -9,12 +9,17 @@
         var helloWorldApp = angular.module("helloWorldApp", []);
         helloWorldApp.controller("HelloWorldCtrl", function ($scope) {
             $scope.myMessage = model;
-        });
 
+            $scope.buttonBehavior = function () {
+                $scope.myMessage = $scope.enteredText;
+            }
+        });
     </script>
 </head>
 
 <body ng-controller="HelloWorldCtrl">
     <h1>{{myMessage}}</h1> 
+    <input ng-model="enteredText" />
+    <button ng-click="buttonBehavior()">Refrash</button>
 </body>
 </html>

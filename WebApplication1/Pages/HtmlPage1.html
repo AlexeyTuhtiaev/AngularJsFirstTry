@@ -4,22 +4,68 @@
     <meta charset="utf-8" />
     <title>Hello World</title>
     <script src="../Libraries/angular.js"></script>
-    <script>
-        var model = "Hello!!!";
-        var helloWorldApp = angular.module("helloWorldApp", []);
-        helloWorldApp.controller("HelloWorldCtrl", function ($scope) {
-            $scope.myMessage = model;
-
-            $scope.buttonBehavior = function () {
-                $scope.myMessage = $scope.enteredText;
-            }
-        });
-    </script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
 </head>
 
-<body ng-controller="HelloWorldCtrl">
-    <h1>{{myMessage}}</h1> 
-    <input ng-model="enteredText" />
-    <button ng-click="buttonBehavior()">Refrash</button>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <div class="page-header">
+                <h1>
+                    Планировщик курсов.
+                </h1>
+                <h3>Пользователь: User1. Количество курсов - 5</h3>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="input-group">
+                <input class="form-control" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default">Добавить</button>
+                </span>
+            </div>
+
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Курс</th>
+                        <th>Пройден</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            HTML, CSS
+                        </td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            JavaScript Essential
+                        </td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            JavaScript Advanced
+                        </td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            HTML5 &amp; CSS3
+                        </td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            AngularJS
+                        </td>
+                        <td>No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

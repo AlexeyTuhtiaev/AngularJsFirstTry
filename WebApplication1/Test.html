@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html ng-app="testModuel">
+<head>
+    <meta charset="utf-8" />
+    <title>Tests</title>
+    <script src="../Libraries/angular.js"></script>
+    <script src="../Libraries/test.js"></script>
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="testCtrl">
+        <div class="container">
+            <div class="row">
+                <h1>Choose Question:</h1>
+                <div ng-repeat="test in testItems">
+                    <label class="col-md-2">
+                        <input type="radio" name="tests" ng-model="mode" value="{{test.value}}" ng-change="onRadioBtnChange(mode)"/>
+                        {{test.display}}
+                    </label>
+                </div>
+                <div ng-switch on="mode">
+
+                    <div ng-switch-when="1">
+                        11111111111111111111
+                    </div>
+
+                    <div ng-switch-when="2">
+                        222222222222222
+                    </div>
+
+                    <div ng-switch-when="3">
+                        333333
+                    </div>
+
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

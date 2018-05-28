@@ -1,0 +1,26 @@
+﻿<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Course</th>
+            <th></th>
+            <th>Passed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="course in data.courses">
+            <td>
+                {{$index+1}}
+                <span ng-if="$first">First Row</span>
+                <span ng-if="$last">Last Row</span>
+            </td>
+            <td>{{course.name}}</td>
+            <td><input type="checkbox" ng-model="course.passed" /></td>
+            <td>
+                <span style="{{setPassedTextStyle(course.passed)}}">
+                    {{convertPassedText(course.passed)}}
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>

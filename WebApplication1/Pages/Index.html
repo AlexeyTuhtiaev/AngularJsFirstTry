@@ -39,54 +39,72 @@
             }
         });
     </script>
+    <script src="../Libraries/calc.js"></script>
 </head>
 
-<body ng-controller="coursesdAppCtrl">
+<body>
     <div class="container">
-        <div class="page-header">
+        <div ng-controller="coursesdAppCtrl">
             <div class="page-header">
-                <h1>
-                    Планировщик курсов.
-                </h1>
-                <h3>Пользователь: {{data.user}}. Количество курсов - {{data.courses.length}}</h3>
+                <div class="page-header">
+                    <h1>
+                        Планировщик курсов.
+                    </h1>
+                    <h3>Пользователь: {{data.user}}. Количество курсов - {{data.courses.length}}</h3>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="input-group">
+                    <input class="form-control" ng-model="courseName" placeholder="Enter New Course" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="addNewCourse()">Добавить</button>
+                    </span>
+                </div>
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course</th>
+                            <th></th>
+                            <th>Passed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="course in data.courses">
+                            <td>
+                                {{$index+1}}
+                                <span ng-if="$first">First Row</span>
+                                <span ng-if="$last">Last Row</span>
+                            </td>
+                            <td>{{course.name}}</td>
+                            <td><input type="checkbox" ng-model="course.passed" /></td>
+                            <td>
+                                <span style="{{setPassedTextStyle(course.passed)}}">
+                                    {{convertPassedText(course.passed)}}
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="panel">
-            <div class="input-group">
-                <input class="form-control" ng-model="courseName" placeholder="Enter New Course" />
-                <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="addNewCourse()">Добавить</button>
-                </span>
+        <div ng-controller="calcCtrl">
+            <div class="row">
+                <div class="panel panel-default">
+                    <h5>Calculator</h5>
+                    <input ng-model="firstValue" />
+                    <input ng-model="secondValue" />
+                    <button class="btn btn-default" ng-click="add()">+</button>
+                    <button class="btn btn-default" ng-click="diff()">-</button>
+                    <button class="btn btn-default" ng-click="mult()">*</button>
+                    <button class="btn btn-default" ng-click="div()">/</button>
+                    <h2>Результат: {{result}}</h2>
+                </div>
             </div>
-
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Course</th>
-                        <th></th>
-                        <th>Passed</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="course in data.courses">
-                        <td>
-                            {{$index+1}}
-                            <span ng-if="$first">First Row</span>
-                            <span ng-if="$last">Last Row</span>
-                        </td>
-                        <td>{{course.name}}</td>
-                        <td><input type="checkbox" ng-model="course.passed" /></td>
-                        <td>
-                            <span style="{{setPassedTextStyle(course.passed)}}">
-                                {{convertPassedText(course.passed)}}
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
+
 
 </body>
 </html>

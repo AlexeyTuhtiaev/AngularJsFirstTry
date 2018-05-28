@@ -79,6 +79,7 @@
     <Content Include="Libraries\angular.js" />
     <Content Include="Libraries\bootstrap-theme.css" />
     <Content Include="Libraries\bootstrap.css" />
+    <Content Include="Libraries\calc.js" />
     <Content Include="Pages\Index.html" />
     <Content Include="Web.config" />
   </ItemGroup>

@@ -8,9 +8,5 @@ testModuel.controller("testCtrl", function ($scope) {
 
     $scope.testItems = tests;
 
-    $scope.mode = 1;
-
-    $scope.onRadioBtnChange = function (value) {
-        $scope.mode = value;
-    }
+    $scope.mode = { val: 1 };
 });

@@ -14,27 +14,24 @@
                 <h1>Choose Question:</h1>
                 <div ng-repeat="test in testItems">
                     <label class="col-md-2">
-                        <input type="radio" name="tests" ng-model="mode" value="{{test.value}}" ng-change="onRadioBtnChange(mode)"/>
+                        <input type="radio" name="tests" ng-model="mode.val" value="{{test.value}}" />
                         {{test.display}}
                     </label>
                 </div>
-                <div ng-switch on="mode">
+            </div>
 
-                    <div ng-switch-when="1">
-                        11111111111111111111
-                    </div>
-
-                    <div ng-switch-when="2">
-                        222222222222222
-                    </div>
-
-                    <div ng-switch-when="3">
-                        333333
-                    </div>
-
+            <div ng-switch on="mode.val" class="row">
+                <div ng-switch-when="1">
+                    <div class="row">11111111111111111111</div>
                 </div>
 
-                
+                <div ng-switch-when="2">
+                    <div class="row">2222222222222222222</div>
+                </div>
+
+                <div ng-switch-when="3">
+                    <div class="row">333333333333333333333</div>
+                </div>
             </div>
         </div>
     </div>

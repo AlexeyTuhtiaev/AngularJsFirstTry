@@ -6,22 +6,44 @@
     <script src="../Libraries/angular.js"></script>
     <script src="../Libraries/test.js"></script>
     <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="Libraries/test-styles.css" rel="stylesheet" />
 </head>
 <body>
     <div ng-controller="testCtrl">
         <div class="container">
             <div class="row">
-                <h1>Choose Question:</h1>
-                <div ng-repeat="test in testItems">
-                    <label class="col-md-2">
-                        <input type="radio" name="tests" ng-model="mode.val" value="{{test.value}}" />
-                        {{test.display}}
+                <h5>Choose style:</h5>
+                <div ng-repeat="classItem in classes">
+                    <label>
+                        <input type="radio"
+                               name="style"
+                               ng-model="$parent.selectedClass"
+                               value="{{classItem.className}}" />
+                        {{classItem.display}}
                     </label>
+                </div>
+                <h5>Border:</h5>
+                <label>
+                    <input type="checkbox" name="checkboxBorder" ng-model="border" />
+                    Border
+                </label>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <h1 ng-class="selectedClass" class="col-md-4">Choose Question:</h1>
+                </div>
+                <div class="row col-md-4 " ng-class="{myBorder: border}">
+                    <div ng-repeat="test in testItems">
+                        <label>
+                            <input type="radio" name="tests" ng-model="mode.val" value="{{test.value}}" />
+                            {{test.display}}
+                        </label>
+                    </div>
                 </div>
             </div>
 
             <div ng-switch on="mode.val" class="row">
-                <div ng-switch-when="1">
+                <div ng-switch-when="1" class="">
                     <div class="row">11111111111111111111</div>
                 </div>
 
@@ -34,6 +56,34 @@
                 </div>
             </div>
         </div>
-    </div>
+        <!--Form -->
+        <div class="container">
+            <div class="panel">
+                <form name="ngForm" novalidate ng-submit="addNewUser(newUser, ngForm.$valid)">
+                    <div class="well">
+                        <div class="form-group">
+                            <label>Name:</label>
+                            <input type="text" name="userName" class="form-control"
+                                   required ng-model="newUser.userName" />
+                            <div class="error" ng-show="showError">
+                                {{getError(ngForm.userName.$error)}}
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            OK
+                        </button>
+                    </div>
+                    <div class="well">
+                        Message: {{message}}
+                        <div>
+                            Valid:
+                            <span class="summary" ng-class="ngForm.$valid ? 'ng-valid' : 'ng-invalid'">
+                                {{ngForm.$valid}}
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!--Form -->
 </body>
 </html>

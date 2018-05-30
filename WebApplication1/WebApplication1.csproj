@@ -105,6 +105,7 @@
     <Content Include="CoursesTable.html" />
     <Content Include="CoursesTableShort.html" />
     <Content Include="Index.html" />
+    <Content Include="Libraries\test-styles.css" />
     <Content Include="Libraries\test.js" />
     <Content Include="temp.html" />
     <Content Include="Test.html" />

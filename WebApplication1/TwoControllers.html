@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Two independent controllers</title>
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="Libraries/twoController.js"></script>
+</head>
+<body ng-app="twoModule">
+    <h2>Work with two independent controllers</h2>
+    <div class="container">
+        <div class="row">
+            <h2>This inputs in different controllers</h2>
+            <div class="col-md-3 well" ng-controller="firstCtrl">
+                <input ng-model="firstInputValue" type="text" class="form-control"/>
+                <br />
+                <button class="btn btn-success btn-lg">
+                    Copy
+                </button>
+            </div>
+            <div class="col-md-3 well" ng-controller="secondCtrl" style="margin-left:5px;">
+                <input ng-model="secondInputValue" type="text" class="form-control" />
+                <br />
+                <button class="btn btn-success btn-lg">
+                    Paste
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

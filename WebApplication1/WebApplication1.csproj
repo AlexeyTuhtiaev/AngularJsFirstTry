@@ -107,8 +107,10 @@
     <Content Include="Index.html" />
     <Content Include="Libraries\test-styles.css" />
     <Content Include="Libraries\test.js" />
+    <Content Include="Libraries\twoController.js" />
     <Content Include="temp.html" />
     <Content Include="Test.html" />
+    <Content Include="TwoControllers.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

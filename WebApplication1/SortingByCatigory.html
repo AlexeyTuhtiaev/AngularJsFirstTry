@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html ng-app="simpleSortingApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Sorting By Catigory</title>
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="Libraries/sortingByCatigory.js"></script>
+</head>
+<body ng-controller="defaultCtrl">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>
+                Items in cart
+                <span class="label label-info">{{items.length}}</span>
+            </h3>
+            <p>
+                Category:
+                <select class="text-info" 
+                        ng-model="selectedCategory" 
+                        ng-options="item.display for item in categories">
+                </select>
+            </p>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in items | filter: { category : selectedCategory.value}">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price | currency}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.count}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -14,18 +14,17 @@
         <div class="row">
             <h2>This inputs in different controllers</h2>
             <div class="col-md-3 well" ng-controller="firstCtrl">
+                <h5>First Controller</h5>
                 <input ng-model="firstInputValue" type="text" class="form-control"/>
                 <br />
-                <button class="btn btn-success btn-lg">
-                    Copy
+                <button ng-click="sendValue()" class="btn btn-success btn-lg">
+                    Send to Second Controller
                 </button>
             </div>
             <div class="col-md-3 well" ng-controller="secondCtrl" style="margin-left:5px;">
+                <h5>Second Controller</h5>
                 <input ng-model="secondInputValue" type="text" class="form-control" />
                 <br />
-                <button class="btn btn-success btn-lg">
-                    Paste
-                </button>
             </div>
         </div>
     </div>

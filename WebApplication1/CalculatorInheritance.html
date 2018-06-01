@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="calcModule">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="Libraries/controllerInheritance.js"></script>
+</head>
+<body>
+    <div ng-controller="perentCalcCtrl" class="container">
+        <div class="row">
+            <input ng-model="firstValue" type="text" class="col-md-1" /> 
+            <input ng-model="secondValue" type="text" class="col-md-1" />
+            <p> = {{result.value}}</p>
+        </div>
+        <div ng-controller="childCtrl">
+            <button ng-click="add()" class="btn btn-success btn-lg">+</button>
+            <button ng-click="diff()" class="btn btn-success btn-lg">-</button>
+            <button ng-click="mult()" class="btn btn-success btn-lg">*</button>
+            <button ng-click="div()" class="btn btn-success btn-lg">/</button>
+        </div>
+    </div>
+</body>
+</html>

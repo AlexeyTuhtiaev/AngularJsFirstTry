@@ -97,10 +97,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalculatorInheritance.html" />
     <Content Include="Libraries\angular.js" />
     <Content Include="Libraries\bootstrap-theme.css" />
     <Content Include="Libraries\bootstrap.css" />
     <Content Include="Libraries\calc.js" />
+    <Content Include="Libraries\controllerInheritance.js" />
     <Content Include="Libraries\courses.js" />
     <Content Include="CoursesTable.html" />
     <Content Include="CoursesTableShort.html" />

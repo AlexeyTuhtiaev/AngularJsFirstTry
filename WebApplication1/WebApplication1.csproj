@@ -107,10 +107,12 @@
     <Content Include="CoursesTable.html" />
     <Content Include="CoursesTableShort.html" />
     <Content Include="Index.html" />
+    <Content Include="Libraries\records.js" />
     <Content Include="Libraries\sortingByCatigory.js" />
     <Content Include="Libraries\test-styles.css" />
     <Content Include="Libraries\test.js" />
     <Content Include="Libraries\twoController.js" />
+    <Content Include="Records.html" />
     <Content Include="SortingByCatigory.html" />
     <Content Include="temp.html" />
     <Content Include="Test.html" />

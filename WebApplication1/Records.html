@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html ng-app="recordsApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Sorting By Catigory</title>
+    <script src="Libraries/angular.js"></script>
+    <link href="Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="Libraries/bootstrap.css" rel="stylesheet" />
+    <script src="Libraries/records.js"></script>
+</head>
+<body ng-controller="defaultCtrl">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>
+                My Notes
+                <span class="label label-info">{{records.length}}</span>
+            </h3>
+
+            <button ng-click="sortNotesByDate()" class="btn btn-info">
+                Sort By Date
+            </button>
+            <button ng-click="sortNotesByRecord()" class="btn btn-info">
+                Sort By Numbers
+            </button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Note</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in records">
+                    <td>{{item.name}}</td>
+                    <td>{{item.note}}</td>
+                    <td>{{formatDate(item.date) | date: 'dd/MM/yyyy'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
